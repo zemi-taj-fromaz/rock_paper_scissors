@@ -4,52 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Game</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="selection">
+            <div >ROCK</div>
+            <div >PAPER</div>
+            <div >SCISSORS</div>
+        </div>
+        <div class="score-title"> SCORE </div>
+        <div class="result">
+            <div class="player">
+                0
+            </div>
+            :
+            <div class="computer">
+                0
+            </div>
+        </div>
+        <div class="play">
+            <div class="rock move">
+                <img src="images/—Pngtree—fist gesture hand sign_5865899.png" alt="">
+            </div>
+            <div class="paper move">
+                <img src="images/paper.png" alt="">
+            </div>
+            <div class="scissors move">
+                <img src="images/scissors.png" alt="">
+            </div>
+        </div>
+        <div class="end">
+            <div class="msg"></div>
+        </div>
+        <div class="results">
+            <div>
+
+            </div>
+        </div>
+    </div>
+
 </body>
-<script>
-    function computerPlay(){
-        let a = Math.floor(Math.random()*3);
-        if(a==0){
-            return "ROCK";
-        }
-        else if (a==1){
-            return "PAPER";
-        }
-        return "SCISSORS";
-    }
 
-    function playerSelection(){
-        let a = prompt("Type rock,paper or scissors : ");
-        a=a.toUpperCase();
-        return a;
-
-    }
-
-    function playRound(playerSelection,computerSelection){
-        if(computerSelection == playerSelection){
-            console.log("It's a tie!");
-        }
-        else if (playerSelection == "ROCK" && computerSelection == "SCISSORS" || playerSelection=="PAPER" && computerSelection == "ROCK" || playerSelection == "SCISSORS" && computerSelection == "ROCK"){
-            console.log("PLAYER WINS!")
-        }
-        else {
-            console.log("COMPUTER WINS!");
-        }
-    }
-
-    function game(){
-        for(let i=0; i < 5 ; i++){
-            let computerSelect = computerPlay();
-            let playerSelect  = playerSelection();
-            playRound(playerSelect,computerSelect);
-
-        }
-    }
-
-    game();
-
-</script>
 </html>
